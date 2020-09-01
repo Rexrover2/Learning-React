@@ -88,22 +88,22 @@ const Game = (props) => {
     const currentStep = history[stepNumber];
     const winner = calculateWinner(currentStep.squares);
 
-    /* // How to have a conditional instead of the ternary operator below??
+    // How to have a conditional instead of the ternary operator below??
     const getStatus = () => {
         const winner = calculateWinner(currentStep.squares);
 
         if (winner==='tied') {
-            return <div>{'Game' + winner}</div>;
+            return 'Game' + winner;
         } else if (winner) {
-            return <div>{'Winner: ' + winner}</div>;
+            return 'Winner: ' + winner;
         } else {
-            return <div>{'Next Player: ' + (xIsNext)}</div>;
+            return 'Next Player: ' + (xIsNext);
         }
-    }; */
+    };
 
-    const getStatus = winner
+    /* const getStatus = winner
     ? `Winner: ${winner}`
-    : `Next player: ${xIsNext ? 'X' : 'O'}`;
+    : `Next player: ${xIsNext ? 'X' : 'O'}`; */
 
     return (
         <div className="game">
@@ -114,7 +114,7 @@ const Game = (props) => {
             />
             </div>
             <div className="game-info">
-            <div> {getStatus} </div>
+            <div> {getStatus()} </div>
             <ol>{ moves }</ol>
             </div>
         </div>
